@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+        @font-face {
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* { margin: 0; padding: 0; list-style: none; font-family: 'Inter', sans-serif; }
+#quick { width: 170px; position: fixed; right: 30px; top: 120px; z-index: 9999;  }
+header { width: 100%; height: 90px;overflow: hidden; position: fixed; left: 0; top: 0;  z-index: 9999; background-color: #fff;}
+#header_box { width: 1200px; height: 70px; margin: auto; margin-top: 10px;}
+#logo { width: 80px; height: 20px;  float: left; margin-top: 25px; }
+#logo>img { width: 100%; vertical-align: top; }
+#menu { width: 700px; height: 20px; line-height: 20px;  float: left; margin-top: 25px; margin-left: 20px; } 
+#menu>li {font-size: 15px; color: #444; letter-spacing :1.6px; font-weight: 500;float: left;right: -35px; margin-right: 65px; position: relative;margin-top: 3px; }
+#menu>li>img { position: absolute; left: 0; top: -20px; }
+#menu>li:last-child { margin-right: 0; }
+#login { height: 35px; line-height: 35px; float: right; margin-top: 20px; }
+#login>li { float: left; margin-left:15px; font-size: 14px;font-weight: 300; }
+#login>li>img { height:35px; }
+#login>li:last-child { width: 77px; height: 35px; border-radius: 3px; text-align: center; background-color: #fded52; }
+#slide { width: 100%; height: 600px; background:url(images/bigbnr_pc_firstSale.png) center no-repeat; margin-top: 90px; }
+#slide_box { width: 1200px; height: 600px;  margin: auto; position: relative;  }
+#slide_prevbtn { position: absolute; left: -100px; top: 0; bottom: 0; margin: auto;  }
+#slide_nextbtn { position: absolute; right: -100px; top: 0; bottom: 0; margin: auto; }
+#slide_btn { width: 300px; height: 30px; position: absolute; left: 0; right: 0; bottom: 50px; margin: auto; text-align: center;}
+#slide_btn>li { width: 10px; height: 10px; border-radius: 12px;  background-color: #fff; opacity: 0.5; display: inline-block; margin: 3px;  margin-top: 40px;}
+#slide_btn>li:nth-child(1) { width: 40px; opacity: 2;}
+#university { width: 100%; height: 583px; background-color: #F7F7FC; overflow: hidden; }
+#university_box { width: 1200px; height: 500px; margin: auto; margin-top: 42px; position: relative; }
+#university_box>h2 { font-size: 40px; padding-top: 50px;   }
+#university_box>p { font-weight: 450;font-size: 19px; margin-top: 30px;letter-spacing :2.2px;word-spacing:1px; line-height :27px; }
+#university_box>ul { width: 1200px; height: 120px; margin-top: 60px; }
+#university_box>ul>li { width: 380px; height: 120px; float: left; margin-right: 30px; background-color: #fff; border-radius: 5px;
+box-shadow: 0 0 5px rgba(0,0,0,0.3); padding-left: 30px; padding-top: 30px; box-sizing: border-box; position: relative;  }
+#university_box>ul>li:last-child { margin-right: 0; }
+#university_box>ul>li>h4 { font-size: 20px; line-height: 34px; font-weight: 400; }
+#university_box>ul>li>img { position: absolute; width: 40px; right: 30px; bottom: 30px;  }
+#university_img { position: absolute; right: 0; top: 20px; width: 400px;  }
+#best{width: 1200px; margin: auto; margin-top: 80px;}
+#best>h2{line-height: 100px; font-size: 27px;letter-spacing:0.3px; font-weight: 650;}
+#best>h2>span{font-weight: 500;vertical-align: 1.7px; }
+#best>ul{width: 100%;overflow: hidden;}
+#best>ul>li{ width: 277px; height: 270px; float: left; margin-right: 30px;}
+#best>ul>li>img {width: 100%; border-radius: 5px;  }
+#best>ul>li>h4{margin-top: 10px; letter-spacing: 0.5px; font-weight: 650; font-size: 16.3px;}
+#best>ul>li>h5{margin-top: 6px; color:rgb(119, 119, 119);font-weight: 450; font-size: 14.3px;letter-spacing :0.7px;}
+#best>ul>li:last-child { margin-right: 0;}
+#welcome{width: 1200px; margin: auto; margin-top: 80px; }
+#welcome>h2{line-height: 100px; font-size: 27px;letter-spacing:0.3px; font-weight: 650;}
+#welcome>h2>span{font-weight: 500;vertical-align: 1.7px; }
+#welcome>ul{width: 100%;overflow: hidden;}
+#welcome>ul>li{ width: 277px; height: 270px; float: left; margin-right: 30px;}
+#welcome>ul>li>img {width: 100%; border-radius: 5px;  }
+#welcome>ul>li>h4{margin-top: 10px; letter-spacing: 0.5px; font-weight: 650; font-size: 16.3px;}
+#welcome>ul>li>h5{margin-top: 6px; color:rgb(119, 119, 119);font-weight: 450; font-size: 14.3px;letter-spacing :0.7px;}
+#banner1{bottom:no-repeat;  background-color: #000;margin-top: 70px;}
+#banner1_box{width: 1100px; height: 280px;margin: auto; background: url(images/bnr_mid_pc_item01.png);}
+#banner1_box>ul{width: 150px; height: 20px; float: right; margin-top: 30px; margin-right: 30px; }
+#banner1_box>ul>li{width: 10px; height: 10px; border-radius: 10px; float: left; margin: 3px; background-color: #fff; opacity: 0.5;}
+#top3 {width: 1200px; height: 620px; margin: auto; margin-top: 80px;   }
+#top3>h2 {line-height: 100px; font-size: 27px;letter-spacing:0.3px; font-weight: 650;}
+#top3>h2>span{font-weight: 500;vertical-align: 1.7px; }
+#top3>ul { width: 1200px; height: 520px;   }
+#top3>ul>li { width: 380px; height: 520px; margin-right: 30px; float: left; background-color:red; border-radius: 15px; position: relative;  overflow: hidden; transition: 0.5s;    }
+#top3>ul>li:hover { transform: translate(0, -20px);    }
+#top3>ul>li:nth-child(1) { background: url(images/hotbnr_item01.png) 0 0 no-repeat; background-size: 380px; }
+#top3>ul>li:nth-child(2) { background: url(images/hotbnr_item02.jpg) 0 0 no-repeat; background-size: 380px; }
+#top3>ul>li:last-child { background: url(images/hotbnr_item03.png) 0 0 no-repeat; background-size: 380px; margin-right: 0; }
+#top3_box1 { width: 380px; height: 520px; background-color: #fa556a; position: absolute; left: 0; top: 380px;  }
+#top3_box2 { width: 380px; height: 520px; background-color: #fa556a; position: absolute; left: 0; top: 380px;  }
+#top3_box3 { width: 380px; height: 520px; background-color: #4fccb6; position: absolute; left: 0; top: 380px;  }
+#top3>ul>li:hover>div { top: 0px; }
+#top3>ul>li>div>h3{width: 80%; margin: 5% 10%;}
+#top3>ul>li:hover>div>h3 { d:n }
+#top3>ul>li>div>h4 { width: 80%; position: absolute; left: 0; top:36px; right: 0; margin: auto; color: #fff; font-size: 19px; font-weight: 1000; }
+#top3>ul>li>div>h4>span{font-weight: 600;}
+#top3>ul>li:hover>div>h4 {letter-spacing:1px;line-height: 35px; font-size: 22px; }
+#top3>ul>li>div>button { width: 150px; height: 40px; background-color: white; border: none; position: absolute; left: 8%; bottom: 30px; font-size: 14px; font-weight: 500;border-radius: 5.5px;}
+#today{width: 1200px; margin: auto; margin-top: 80px;}
+#today>h2{line-height: 100px; font-size: 27px;letter-spacing:0.3px; font-weight: 650;}
+#today>h2>span{font-weight: 500;vertical-align: 1.7px; }
+#today>ul{width: 1200px; overflow: hidden;}
+#today>ul>li{width: 277px; height: 270px; float: left; margin-right: 30px;}
+#today>ul>li:last-child { margin-right: 0; } 
+#today>ul>li>img  {  width: 100%; }
+#today>ul>li>h4{margin-top: 10px; letter-spacing: 0.5px; font-weight: 650; font-size: 16.3px;}
+#today>ul>li>h5{margin-top: 6px; color:rgb(119, 119, 119);font-weight: 450; font-size: 14.3px;letter-spacing :0.7px;}
+#today>ul>li:last-child { margin-right: 0;}
+#banner2{width: 1200px; height: 130px;  margin: auto; margin-top: 80px;}
+
+#story{width: 100%;  background-color: white; margin-top: 50px;}
+#story_box{width:1200px; height: 575px;margin: auto; margin-top: 10px; background-color:#f7f7fc}
+#story_box>h2{ line-height: 100px; font-size: 27px;letter-spacing:0.3px; font-weight: 650; }
+#story_box>ul>li>img{width: 100%;}
+#story_box>ul>li>h4{margin-top: 10px; letter-spacing: 0.5px; font-weight: 650; font-size: 16.3px;}
+#story_box>ul>li>h5{margin-top: 6px; color:rgb(119, 119, 119);font-weight: 450; font-size: 14.3px;letter-spacing :0.7px;}
+#story_box>ul{width: 100%;overflow: hidden;}
+#story_box>ul>li{ width: 380px; height: 310px; background-color: white;float: left;margin-right: 30px;}
+#story_box>ul>li{width: 380px; height: 310px; background-color: #fff;float: left;margin-right: 30px;}
+#story_box>ul>li{width: 380px; height: 310px; background-color: #fff;float: left; margin-right: 0;}
+
+#event{width: 100%; height: 500px;background-color: #f7f7fc;margin-top: 30px;}
+#event>h2{float: left;}
+#event>h3{float: right;}
+#event>ul>li{width: 582px; height: 370px; float: left; margin-right: 35px; background-color: #3ff;}
+#event>ul>li>div{width: 100%; height: 280px; background: #000 ; background-size: contain;}
+#event>ul>li>{width: 582px; height: 370px; margin-right: 0; background-color: #33fff3;}
+#event>ul>li>div{width: 100$;height: 280px; background: #000; background-size: contain;}
+#catrgory{width: 100%; height: 280px; background-color: #1a1ac2;}
+#catrgory_box{width: 1200px; height: 280px; margin: auto; background-color: yellow;}
+#catrgory_box_left{width: 600px; height: 200px; margin-top: 40px; background-color: 3366ff;float: left;}
+#catrgory_box_img{width: 280px; height: 280px; float: right; border-radius: 300px;}
+#footer{width: 1200px; height: 520px; margin: auto; margin-top: 65px;}
+#footer_left{width: 500px; height: 500px; float: left; background-color: brown; margin-top: 10px;}
+#footer_right{width: 650px; height: 500px; float: right; background-color: red;margin-top: 10px;}
+
+  </style> </head> <body>   
+  
+      <img src="images/img_banner_counsel_v2.1ae3e670.png" alt="" id="quick">
+
+      <header>
+            <div id="header_box">
+                  <h1 id="logo"><img src="icons/logo.png" alt=""></h1>
+                  <ul id="menu">
+                        <li>입학 안내</li>
+                        <li>야나두 영어</li>
+                        <li>야나두 핏 <img src="icons/menu_icon.png" alt=""></li>
+                        <li>야나두 클래스</li>
+                        <li>이벤트</li>
+                  </ul>
+                  <ul id="login">
+                     <li><img src="icons/header_cart.png" alt=""></li>
+                     <li>로그인</li>
+                  </ul>
+            </div>   
+      </header>
+
+<div id="slide">
+      <div id="slide_box">
+            <img src="icons/mainslide_prev.png" alt="" id="slide_prevbtn">
+            <img src="icons/mainslide_next.png" alt="" id="slide_nextbtn">
+            <ul id="slide_btn">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+            </ul>
+      </div>
+</div>
+<!--  -->
+<div id="university">
+      <div id="university_box">
+            <img src="images/bg_university_book.a853e16c.png" alt="" id="university_img">
+            <h2>대학 그 이상의 배움, <br>Yanadoo University에 입학하세요</h2>
+            <p>150만 성공 노하우를 가진 야나두와 함께 <br>당신의 제 2의 멋진 인생을 시작해보세요</p>
+            <ul>
+               <li>
+                  <h4>Yanadoo University가 <br>궁금해요</h4>
+                  <img src="icons/university_btn.png" alt="">
+               </li>
+               <li>
+                  <h4>입학생 전용 <br>프리미엄 혜택</h4>
+                  <img src="icons/university_btn.png" alt="">
+               </li>
+               <li>
+                  <h4>입학생 필수 <br>자기계발 클래스</h4>
+                  <img src="icons/university_btn.png" alt="">
+               </li>
+            </ul> 
+      </div>
+</div>
+<!--  -->
+<div id="best"> 
+      <h2><span>[</span>150만 </span>회원 PICK<span>]</span> BEST 영어 클래스</h2> 
+      <ul>  
+         <li> 
+            <img src="images/thumb_firstSale.png" alt="">
+            <h4>2022년 첫 세일 78% 할인</h4>
+            <h5>#사상최대 #파격할인 #장학금</h5>
+         </li> 
+         <li>
+            <img src="images/1001868_1641466140032.png" alt="">
+            <h4>기초회화 1위 영어 왕초보 마스터</h4>
+            <h5>#150만성공패턴 #올인원</h5>
+         </li>
+         <li>
+            <img src="images/1000847_1641466919083.png" alt="">
+            <h4>딱 90일만에 원어민과 말문트기</h4>
+            <h5>#기초회화 #하루10분 #왕초보탈출</h5>
+         </li>
+         <li>
+            <img src="images/1002009_1641466978002.png" alt="">
+            <h4>150만 영포자의 말문을 트여준 패턴영어</h4>
+            <h5>#원예나따라하기 #패턴학습</h5>
+         </li>  <!-- #best>ul>li:last-child { mr0 }    -->
+      </ul>    
+</div>
+<!--  -->
+<div id="welcome"> 
+      <h2><span>[</span>웰컴 2022<span>]</span>올해 주목할 만한 클래스</h2>
+      <ul>
+            <li>
+                  <img src="images/thumb_yafit_free_211222.png" alt="">
+                  <h4>딱 한 달만 무료로 타 볼까?</h4>
+                  <h5>#야핏사이클 #한달앱이용료0원</h5>
+            </li>
+            <li>
+                  <img src="images/1000848_1641466948861.png" alt="">
+                  <h4>현지 올로케! 진짜 미국 영어</h4>
+                  <h5>#실전영어 #미국현지 #원어민표현</h5>
+            </li>
+            <li>
+                  <img src="images/1000853_1641467073567.png" alt="">
+                  <h4>연봉 수직상승! 비즈니스 영어 90일 완성</h4>
+                  <h5>#비즈니스영어 #직장인 #응급키드</h5>
+            </li>
+            <li>
+                  <img src="images/1000851_1641467029652.png" alt="">
+                  <h4>200개로 끝나는 원어민 필수표현</h4>
+                  <h5>#리얼상황 #셀럽원어민영어</h5>
+            </li>
+      </ul>
+</div>
+
+<!--  -->
+<div id="banner1">
+      <div id="banner1_box"> 
+            <ul> 
+               <li></li> 
+               <li></li>
+               <li></li>
+            </ul>
+      </div>
+</div>
+
+<!--  -->
+<div id="top3"> 
+      <h2><span>[</span>HOT<span>]</span> 실시간 TOP3 패키지</h2> 
+      <ul> 
+         <li> 
+            <div id="top3_box1">
+                  <h3>영어</h3>
+                  <h4><span>2022</span>년 영어 새 출발 지원 사상 최대 혜택과 파격할인! 지금이 영어 시작 절호의 기회</h4>
+                  <button>패키지 클래스 보기</button>
+            </div>
+         </li> 
+         <li>
+            <div id="top3_box2">
+                  <h3>영어</h3>
+                  <h4><span>150</span>만 영포자의 말문을 트여준 야나두 대표강사 원예나의 패턴 영어</h4>
+                  <button>패키지 클래스 보기</button>
+            </div>
+         </li>
+         <li>  
+            <div id="top3_box3">
+                  <h3>야핏</h3>
+                  <h4><span>1</span>년에 딱 한번, 설 파격 혜택을 놓치지 마세요</h4>
+                  <button>패키지 클래스 보기</button>
+            </div>
+         </li>
+      </ul> 
+</div>
+
+<!--  -->
+
+<div id="today">
+      <h2><span>[</span>TODAY 추천<span>]</span> 지금 당신을 성장시킬 클래스</h2> 
+      <ul> 
+         <li>
+            <img src="images/1000853_1641467073567.png" alt="">
+            <h4>연봉 수직상승! 비즈니스 영어 90일 완성</h4>
+            <h5>#비즈니스 #직장인 #응급키트</h5>
+         </li>
+         <li>
+            <img src="images/thumb_1642152850126.png" alt="">
+            <h4>시작하는 투자자를 위한 재테크 가이드 <br><돈 모으기부터 불리기까지></h4>
+            <h5>#재테크 #국내주식 #미국주식</h5>
+         </li>
+         <li>
+            <img src="images/17_1637912614023.png" alt="">
+            <h4>퇴근 후 월 2백 더 버는 <무자본으로 시작하는 부업></h4>
+            <h5>#직장인 부업 #무자본 #창업성공</h5>
+         </li>
+         <li>
+            <img src="images/18_1637912631804.png" alt="">
+            <h4>초고속 승진! 일잘러가 되는 실무 스킬업</h4>
+            <h5>#비즈니스커뮤니케이션 #엑셀 #PPT</h5>
+         </li>
+      </ul>
+</div>
+<!--  -->
+<div id="banner2">
+   <img src="images/norbnr_bottom_pc_yafit_premium.png" alt="">
+</div>
+
+<div id="story">
+      <div id="story_box">
+            <h2>야나두 리얼 영어 성장 스토리 "야,나두했어</h2>
+            <ul>
+                  <li>
+                        <img src="images/img_media_thumb_kkb.png" alt="">
+                        <h4>배우 김기방</h4>
+                        <h5>김기방의 좋은 아빠되기 프로젝트</h5>
+                  </li>
+                  <li>
+                        <img src="images/img_media_thumb_yjh_interview.png" alt="">
+                        <h4>미스코리아</h4>
+                        <h5>유지형의 1년 Before & After</h5>
+                  </li>
+                  <li>
+                        <img src="images/img_media_thumb_mhg.jpg" alt="">
+                        <h4>수강생 민혜경</h4>
+                        <h5>지금도 늦지 않은 영어 도전기</h5>
+                  </li>
+            </ul>
+      </div>
+</div>
+<!--  -->  
+<div id="event">
+      <h2>진행중인 인기 이벤트</h2>
+      <h3></h3>
+      <ul>
+            <li>
+                  <div><img src="images/thumb_1640741570906.jpg" alt=""></div>
+                  <h4>지금 무료로 야핏 앱 다운로드 받으세요!</h4>
+                  <h5>2021-12-29 ~ 2022-03-31</h5>
+            </li>
+            <li>
+                  <div><img src="images/event_list_유캔두잇_챌린지_1637654498132.png" alt=""></div>
+                  <h4>유캔두잇 챌린지</h4>
+                  <h5>2021-11-23 ~ 2022-05-11</h5>
+            </li>
+      </ul>
+</div>
+<!--  -->
+<div id="catrgory">
+      <div id="catrgory_box">
+            <div id="catrgory_box_left"></div>
+            <img src="" alt="" id="catrgory_box_img">
+      </div>
+</div>
+<!--  -->
+<footer>
+      <div id="footer_left"></div>
+      <div id="footer_right"></div>
+</footer>
+
+
+
+ </body>
+</html>
